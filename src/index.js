@@ -18,11 +18,13 @@ app.use("/static", express.static(path.join(__dirname, "../public")));
 
 // Helpers
 const {bot} = require('./helpers/telegramBot');  
+const connectDB = require('./helpers/database');
 
 const startup = async () => {
-    
+
     app.listen(PORT, () => {
         bot.launch();
+        connectDB();
         
         console.log('started at ' + PORT)
     });
