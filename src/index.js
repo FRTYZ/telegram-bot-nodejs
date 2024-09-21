@@ -20,6 +20,11 @@ app.use("/static", express.static(path.join(__dirname, "../public")));
 const {bot} = require('./helpers/telegramBot');  
 const connectDB = require('./helpers/database');
 
+// Routes
+const homeRoutes = require('./routes/home');
+
+app.use(homeRoutes);
+
 const startup = async () => {
 
     app.listen(PORT, () => {

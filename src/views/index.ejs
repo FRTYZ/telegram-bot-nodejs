@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <title>Job Application</title>
+</head>
+<body>
+  <div class="form-main-wrapper"></div>
+    <div class="form-wrapper">
+      <div class="head-image-section">
+        <img src="/static/images/head-image.jpg" width="800" height="200" />
+      </div>
+      <form action="/" method="POST" class="form-section">
+        <div class="form-input-flex">
+          <div>
+            <label for="firstname" class="form-label"> First Name </label>
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              placeholder="Your first name"
+              class="form-input"
+            />
+          </div>
+          <div>
+            <label for="lastname" class="form-label"> Last Name </label>
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="Your last name"
+              class="form-input"
+            />
+          </div>
+        </div>
+        <div>
+            <label for="email" class="form-label"> Email </label>
+            <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="example@email.com"
+            class="form-input"
+            />
+        </div>
+        <div>
+            <label for="phone" class="form-label"> Phone </label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Phone number"
+              class="form-input"
+            />
+        </div>
+        <div>
+          <label for="role" class="form-label"> Applying for Position: </label>
+          <select
+            name="role"
+            id="role"
+            required
+            class="form-input"
+          >
+            <option value="">Select Position</option>
+            <option value="Full Stack Developer">Full Stack Developer</option>
+            <option value="Frontend Developer">Frontend Developer</option>
+            <option value="Backend Developer">Backend Developer</option>
+            <option value="Mobile Developer">Backend Developer</option>
+          </select>
+        </div>
+        <div>
+          <label for="message" class="form-label">Cover Letter</label>
+          <textarea
+            rows="6"
+            name="message"
+            id="message"
+            class="form-input"
+          ></textarea>
+        </div>
+        <div class="form-file-flex">
+          <label for="upload" class="form-label">
+            Upload Resume
+          </label>
+          <input
+            type="file"
+            name="upload"
+            id="upload"
+            class="form-file-input"
+          />
+        </div>
+        <button class="form-btn">Apply Now</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
