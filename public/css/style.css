@@ -8,6 +8,27 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.alert-section {
+  margin: 5px 0px;
+}
+
+.alert-text {
+  text-align: center;
+  font-size: 15px;
+  border-radius: 0;
+  padding: 8px;
+  border-radius: 5px;
+  color: white;
+}
+
+.alert-danger {
+  background-color: rgb(238, 7, 7);
+}
+
+.alert-success {
+  background-color: rgb(7, 238, 18);
+}
+
 .form-main-wrapper {
   display: flex;
   align-items: center;
@@ -59,7 +80,7 @@ body {
 
 .form-input {
   width: 100%;
-  padding: 13px 22px;
+  padding: 13px 15px;
   border-radius: 5px;
   border: 1px solid #dde3ec;
   background: #ffffff;
