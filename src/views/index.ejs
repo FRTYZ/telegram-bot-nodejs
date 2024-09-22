@@ -12,7 +12,15 @@
       <div class="head-image-section">
         <img src="/static/images/head-image.jpg" width="800" height="200" />
       </div>
-      <form action="/" method="POST" class="form-section">
+      <form action="/" method="POST" enctype="multipart/form-data" class="form-section">
+        <% if ((typeof alert != "undefined")) { %>
+          <div class="alert-section">
+            <a
+              class="alert-text alert-<%= alert.class %>"
+              ><%= alert.text %></a
+            >
+          </div>
+        <% } %>
         <div class="form-input-flex">
           <div>
             <label for="firstname" class="form-label"> First Name </label>
@@ -22,6 +30,7 @@
               id="firstname"
               placeholder="Your first name"
               class="form-input"
+              required
             />
           </div>
           <div>
@@ -32,17 +41,19 @@
               id="lastname"
               placeholder="Your last name"
               class="form-input"
+              required
             />
           </div>
         </div>
         <div>
             <label for="email" class="form-label"> Email </label>
             <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="example@email.com"
-            class="form-input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@email.com"
+              class="form-input"
+              required
             />
         </div>
         <div>
@@ -53,6 +64,7 @@
               id="phone"
               placeholder="Phone number"
               class="form-input"
+              required
             />
         </div>
         <div>
@@ -71,23 +83,26 @@
           </select>
         </div>
         <div>
-          <label for="message" class="form-label">Cover Letter</label>
+          <label for="cover_latter" class="form-label">Cover Letter</label>
           <textarea
             rows="6"
-            name="message"
-            id="message"
+            name="cover_latter"
+            id="cover_latter"
             class="form-input"
+            required
           ></textarea>
         </div>
         <div class="form-file-flex">
-          <label for="upload" class="form-label">
+          <label for="resume_file" class="form-label">
             Upload Resume
           </label>
           <input
             type="file"
-            name="upload"
-            id="upload"
+            name="resume_file"
+            id="resume_file"
             class="form-file-input"
+            accept=".pdf, .doc, .docx"
+            required
           />
         </div>
         <button class="form-btn">Apply Now</button>
