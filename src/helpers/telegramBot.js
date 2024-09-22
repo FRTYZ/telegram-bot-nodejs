@@ -1,12 +1,10 @@
-const { Telegraf, session, Scenes, Markup } = require('telegraf');
+const { Telegraf, session, Scenes } = require('telegraf');
 
 const botToken = process.env.BOT_TOKEN;
 const chatId = process.env.BOT_CHAT_ID;
 
 const bot = new Telegraf(botToken);
 
-bot.start((ctx) => ctx.reply('welcome to hr notification bot.'));
- 
 /*
 Scenes
 
@@ -29,18 +27,34 @@ const stage = new Scenes.Stage([applicationScene]);
 bot.use(session());
 bot.use(stage.middleware());
 
+bot.start((ctx) => ctx.reply('welcome to hr notification bot.'));
+
 // command used to access chat id information to send a message to the bot
 bot.command('chatid', (ctx) => {
     ctx.reply(ctx.message.chat.id);
 })
 
+bot.command('applications', (ctx) => {
+    ctx.scene.enter('applicationScene');
+});
+
 // helper function to send a message to the bot
-async function sendMessageToBot(message) {
+async function sendMessageToBot(message, filePath = null) {
     try {
-        await bot.telegram.sendMessage(chatId, message, { parse_mode: 'HTML' });
-    }catch(err){ 
-        console.log(err)
+        if (filePath) {
+            // Eğer dosya varsa dosyayı ve mesajı caption olarak gönder
+            await bot.telegram.sendDocument(chatId, { 
+                source: filePath 
+            }, {
+                caption: message, // Mesajı caption olarak ekle
+                parse_mode: 'HTML'
+            });
+        } else {
+            // Dosya yoksa sadece mesaj gönder
+            await bot.telegram.sendMessage(chatId, message, { parse_mode: 'HTML' });
+        }
+    } catch (err) {
+        console.log(err);
     }
 }
-
 module.exports = {bot, sendMessageToBot}
