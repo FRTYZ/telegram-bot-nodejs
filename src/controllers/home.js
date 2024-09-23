@@ -19,7 +19,6 @@ exports.getApplicationForm = async function (req, res, next) {
 exports.postApplicationForm = async function (req, res, next) {
   try {
     const {firstname, lastname, email, phone, role, cover_latter} = req.body;
-    console.log(req.body)
     const resumeFile = req.file;
 
     if (Object.values(req.body).some(field => !field || field.trim() === '')) {
@@ -62,7 +61,10 @@ exports.postApplicationForm = async function (req, res, next) {
 <b>2- Email:</b> ${email}
 <b>3- Phone:</b> ${phone}
 <b>4- Role:</b> ${role}
-<b>8- Cover letter:</b> ${cover_latter}
+<b>8- Cover letter:</b> 
+${cover_latter}
+
+------
 <b>Başvuru Tarihi:</b> ${day}/${month}/${year}
 `;
 
