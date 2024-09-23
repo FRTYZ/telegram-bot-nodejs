@@ -65,7 +65,7 @@ exports.postApplicationForm = async function (req, res, next) {
 ${cover_latter}
 
 ------
-<b>Başvuru Tarihi:</b> ${day}/${month}/${year}
+<b>Application Date:</b> ${day}/${month}/${year}
 `;
 
         await sendMessageToBot(message, pathName);
