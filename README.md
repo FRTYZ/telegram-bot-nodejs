@@ -7,9 +7,9 @@
 
 I will explain how to create a simple telegram bot using Node.js. While creating the Telegram bot, I made the resume pool project that human resources can use
 
-## Preview 🎬
+## Preview (Youtube) 🎬
 
-[![Video Title](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=6lunP5kC2Qk)
+[![How To Create a Telegram Bot with Node.js](https://img.youtube.com/vi/6lunP5kC2Qk/maxresdefault.jpg)](https://raw.githubusercontent.com/FRTYZ/telegram-bot-nodejs/main/public/preview-video.mp4)
 
 ## Features ✨
 - Receiving job applications from telegram bot
