@@ -9,7 +9,7 @@ I will explain how to create a simple telegram bot using Node.js. While creating
 
 ## Preview (Youtube) 🎬
 
-[![How To Create a Telegram Bot with Node.js](https://img.youtube.com/vi/6lunP5kC2Qk/maxresdefault.jpg)](https://raw.githubusercontent.com/FRTYZ/telegram-bot-nodejs/main/public/preview-video.mp4)
+[![How To Create a Telegram Bot with Node.js](https://img.youtube.com/vi/6lunP5kC2Qk/maxresdefault.jpg)](https://www.youtube.com/watch?v=6lunP5kC2Qk){:target="_blank" rel="noopener"}
 
 ## Features ✨
 - Receiving job applications from telegram bot
